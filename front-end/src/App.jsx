@@ -1,12 +1,14 @@
 import React from 'react'
 import './App.css'
+import RouteConfig from './pages/Routes/RouteConfig'
 
 function App() {
 
 
   return (
     <>
-      <h1 className='bg-blue-400'>hello </h1>
+    <RouteConfig/>
+    
     </>
   )
 }
