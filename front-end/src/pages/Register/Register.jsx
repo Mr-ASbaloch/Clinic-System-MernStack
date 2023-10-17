@@ -1,10 +1,22 @@
-import { Form, Input } from 'antd';
+import { Form, Input, message } from 'antd';
 import React from 'react'
 import { Link } from 'react-router-dom';
+import  { Axios } from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
-  const registerHandler = ({ values }) => {
-    console.log(values);
+  const registerHandler =async (values) => {
+    try {
+      const res= await Axios.post('/api/v1/user/register', values)
+      if (res.data.success) {
+        message.success("register")
+      }
+    } catch (error) {
+      message.error(error)
+    }
+   
   };
   return (
     <div>
